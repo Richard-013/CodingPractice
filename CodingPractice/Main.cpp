@@ -5,7 +5,7 @@
 * Return number of days for age [Done]
 *
 * Extra challenges:
-* Include extra days for leap years
+* Include extra days for leap years [Done]
 * Retrieve the current year from today's date
 * Calculate using birth day to current date
 * Check for only positive integer inputs

@@ -6,6 +6,7 @@
 *
 * Extra challenges:
 * Include extra days for leap years
+* Retrieve the current year from today's date
 * Calculate using birth day to current date
 * Check for only positive integer inputs
 * Check for outputs
@@ -14,26 +15,45 @@
 */
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 int getBirthYear();
-int calculateAge(int birthYear);
+int calculateAge(int year);
 int yearsToDays(int age);
 
 int main() {
+
+    int year = getBirthYear();
+
+    std::cout << year << std::endl;
+
     return 0;
 }
 
 int getBirthYear()
 {
+    std::string inputLine;
+    int birthYear;
 
+    std::cout << "What year were you born?" << std::endl;
+    std::getline(std::cin, inputLine);
+
+    std::stringstream ss(inputLine);
+
+    ss >> birthYear;
+
+    return birthYear;
 }
 
-int calculateAge(int birthYear)
+int calculateAge(int year)
 {
-    
+    const int CURRENT_YEAR = 2024;
+
+    return 0;
 }
 
 int yearsToDays(int age)
 {
-
+    return 0;
 }

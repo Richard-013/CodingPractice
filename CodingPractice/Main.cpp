@@ -19,16 +19,20 @@
 #include <sstream>
 
 int getBirthYear();
-int calculateAge(int year);
-int yearsToDays(int age);
+int calculateAge(int year, int currentYear);
+int countLeapYears(int year, int currentYear);
+int yearsToDays(int age, int numLeapYears);
 
 int main() {
+    const int CURRENT_YEAR = 2024;
 
     int year = getBirthYear();
-    int age = calculateAge(year);
-    int ageInDays = yearsToDays(age);
+    int age = calculateAge(year, CURRENT_YEAR);
+    int leapYears = countLeapYears(year, CURRENT_YEAR);
+    int ageInDays = yearsToDays(age, leapYears);
 
     std::cout << "\nSo you're around " << age << " years old?" << std::endl;
+    std::cout << "\nYou've seen " << leapYears << " leap years." << std::endl;
     std::cout << "\nThat makes you roughly " << ageInDays << " days old." << std::endl;
 
     return 0;
@@ -49,18 +53,30 @@ int getBirthYear()
     return birthYear;
 }
 
-int calculateAge(int year)
+int calculateAge(int year, int currentYear)
 {
-    const int CURRENT_YEAR = 2024;
-
-    int age = CURRENT_YEAR - year;
+    int age = currentYear - year;
 
     return age;
 }
 
-int yearsToDays(int age)
+int countLeapYears(int year, int currentYear)
 {
-    int days = age * 365;
+    // Leap years are years that can be divided by 4 but not by 100
+    // Except for years which can be divided by 400 which are leap years
+    // Total each type of year and sum/subtract them
+
+    year--; // Move birth year back by one to account for those born in a leap year
+    int leapYearsUntilBirth = (year / 4) - (year / 100) + (year / 400);
+
+    int leapYearsAfterBirth = (currentYear / 4) - (currentYear / 100) + (currentYear / 400);
+
+    return leapYearsAfterBirth - leapYearsUntilBirth;
+}
+
+int yearsToDays(int age, int numLeapYears)
+{
+    int days = (age * 365) + numLeapYears;
     
     return days;
 }

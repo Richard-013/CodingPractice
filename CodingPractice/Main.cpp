@@ -1,8 +1,8 @@
 /*
-* Get birth year from the user
-* Calculate age from birth year
-* Convert years to days
-* Return number of days for age
+* Get birth year from the user [Done]
+* Calculate age from birth year [Done]
+* Convert years to days [Done]
+* Return number of days for age [Done]
 *
 * Extra challenges:
 * Include extra days for leap years

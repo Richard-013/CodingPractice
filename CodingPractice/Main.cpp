@@ -10,10 +10,30 @@
 * Check for only positive integer inputs
 * Check for outputs
 * Handle input related exceptions
+* Calculate ages from B.C. years
 */
 
 #include <iostream>
 
+int getBirthYear();
+int calculateAge(int birthYear);
+int yearsToDays(int age);
+
 int main() {
     return 0;
+}
+
+int getBirthYear()
+{
+
+}
+
+int calculateAge(int birthYear)
+{
+    
+}
+
+int yearsToDays(int age)
+{
+
 }

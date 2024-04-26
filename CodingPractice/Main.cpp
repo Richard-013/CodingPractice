@@ -26,8 +26,10 @@ int main() {
 
     int year = getBirthYear();
     int age = calculateAge(year);
+    int ageInDays = yearsToDays(age);
 
     std::cout << "\nSo you're around " << age << " years old?" << std::endl;
+    std::cout << "\nThat makes you roughly " << ageInDays << " days old." << std::endl;
 
     return 0;
 }
@@ -58,5 +60,7 @@ int calculateAge(int year)
 
 int yearsToDays(int age)
 {
-    return 0;
+    int days = age * 365;
+    
+    return days;
 }

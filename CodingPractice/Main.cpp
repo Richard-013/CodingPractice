@@ -25,8 +25,9 @@ int yearsToDays(int age);
 int main() {
 
     int year = getBirthYear();
+    int age = calculateAge(year);
 
-    std::cout << year << std::endl;
+    std::cout << "\nSo you're around " << age << " years old?" << std::endl;
 
     return 0;
 }
@@ -50,7 +51,9 @@ int calculateAge(int year)
 {
     const int CURRENT_YEAR = 2024;
 
-    return 0;
+    int age = CURRENT_YEAR - year;
+
+    return age;
 }
 
 int yearsToDays(int age)
